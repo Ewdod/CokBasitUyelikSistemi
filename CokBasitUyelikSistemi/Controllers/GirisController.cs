@@ -1,15 +1,18 @@
-﻿using CokBasitUyelikSistemi.Models;
+﻿using CokBasitUyelikSistemi.Filters;
+using CokBasitUyelikSistemi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CokBasitUyelikSistemi.Controllers
 {
     public class GirisController : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
         }
         [HttpPost,ValidateAntiForgeryToken]
+        
         public IActionResult Index(Kullanici kullanici)
         {
 
@@ -17,6 +20,8 @@ namespace CokBasitUyelikSistemi.Controllers
             {
                 if (kullanici.KullaniciAdi == "ali" && kullanici.Parola == "123")
                 {
+
+                    HttpContext.Session.SetString("giris","ali");
                     // bu istegi yaparn tarayici tarafindan giris yapildigini not al
 
                     return RedirectToAction("Index", "Home", new { giris = "basarili"});

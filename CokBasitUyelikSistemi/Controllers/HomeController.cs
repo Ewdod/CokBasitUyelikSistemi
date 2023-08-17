@@ -1,4 +1,5 @@
-﻿using CokBasitUyelikSistemi.Models;
+﻿using CokBasitUyelikSistemi.Filters;
+using CokBasitUyelikSistemi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,12 +13,12 @@ namespace CokBasitUyelikSistemi.Controllers
         {
             _logger = logger;
         }
-
+        [GirisControl]
         public IActionResult Index()
         {
             return View();
         }
-
+        [GirisControl]
         public IActionResult Privacy()
         {
             return View();
