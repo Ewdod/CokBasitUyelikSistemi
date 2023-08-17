@@ -1,0 +1,26 @@
+﻿@model Kullanici
+@{
+    ViewBag.Title = "Giriş";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form method="post">
+
+    <div class="mb-3">
+
+        <label asp-for="KullaniciAdi">Kullanici Adi</label>
+        <input asp-for="KullaniciAdi" class="form-control" />
+        <span asp-validation-for="KullaniciAdi" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="Parola">Kullanici Adi</label>
+        <input asp-for="Parola" class="form-control" />
+        <span asp-validation-for="Parola" class="text-danger"></span>
+
+    </div>
+    <button class="btn btn-primary"> Giris yap </button> 
+
+</form>
